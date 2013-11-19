@@ -11,7 +11,8 @@ var BlinkyDancer = function(top, left, timeBetweenSteps){
 };
 
 
-BlinkyDancer.prototype = Object.create(Dancer.prototype);
+//BlinkyDancer.prototype = Object.create(Dancer.prototype);
+BlinkyDancer.prototype = new Dancer();
 BlinkyDancer.prototype.constructor = BlinkyDancer;
 
 var oldStep = BlinkyDancer.prototype.step;
@@ -31,5 +32,5 @@ BlinkyDancer.prototype.step = function(){
 
 
 var makeBlinkyDancer = function() {
-  new BlinkyDancer(arguments[0], arguments[1], arguments[2]);
+  return (new BlinkyDancer(arguments[0], arguments[1], arguments[2]));
 }

@@ -42,7 +42,8 @@
             $("body").width() * Math.random(),
             Math.random() * 1000
           );
-
+          window.dancers.push(dancer);
+          $('body').append('<div>"Hello"</div>');
           $('body').append(dancer.$node);
         });
       });
