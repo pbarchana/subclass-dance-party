@@ -3,16 +3,18 @@ var BlinkyDancer = function(top, left, timeBetweenSteps){
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
-  this.top = top;
-  this.left = left;
-  this.timeBetweenSteps = timeBetweenSteps;
-  this.step();
-  this.setPosition(top, left);
+  //this.top = top;
+  //this.left = left;
+  //this.timeBetweenSteps = timeBetweenSteps;
+  //this.step();
+  //this.setPosition(top, left);
+  this.$node = $('<span class="dancer"></span>');
+  Dancer.call(this, top, left, timeBetweenSteps);
 };
 
 
-//BlinkyDancer.prototype = Object.create(Dancer.prototype);
-BlinkyDancer.prototype = new Dancer();
+BlinkyDancer.prototype = Object.create(Dancer.prototype);
+//BlinkyDancer.prototype = new Dancer();
 BlinkyDancer.prototype.constructor = BlinkyDancer;
 
 var oldStep = BlinkyDancer.prototype.step;
