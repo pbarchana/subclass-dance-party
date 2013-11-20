@@ -2,19 +2,13 @@ var PopDancer = function(top, left, timeBetweenSteps){
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
-
-  //this.top = top;
-  //this.left = left;
-  //this.timeBetweenSteps = timeBetweenSteps;
-  //this.step();
-  //this.setPosition(top, left);
-  //this.$node = $('<span class="popdancer"></span>');
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.movePosition();
 };
 
 
-PopDancer.prototype = new Dancer();
-//PopDancer.prototype = Object.create(Dancer.prototype);
+//PopDancer.prototype = new Dancer();
+PopDancer.prototype = Object.create(Dancer.prototype);
 PopDancer.prototype.constructor = PopDancer;
 
 
@@ -30,7 +24,7 @@ PopDancer.prototype.step = function(){
      var temp = {};
      temp = {"border-color" : "blue"};
      this.$node.css(temp);
-    this.$node.toggle();
+     //this.$node.toggle();
 };
 
 
