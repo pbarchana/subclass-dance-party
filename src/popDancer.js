@@ -8,13 +8,13 @@ var PopDancer = function(top, left, timeBetweenSteps){
   //this.timeBetweenSteps = timeBetweenSteps;
   //this.step();
   //this.setPosition(top, left);
-  this.$node = $('<span class="popdancer"></span>');
+  //this.$node = $('<span class="popdancer"></span>');
   Dancer.call(this, top, left, timeBetweenSteps);
 };
 
 
-//PopDancer.prototype = new Dancer();
-PopDancer.prototype = Object.create(Dancer.prototype);
+PopDancer.prototype = new Dancer();
+//PopDancer.prototype = Object.create(Dancer.prototype);
 PopDancer.prototype.constructor = PopDancer;
 
 
@@ -22,7 +22,6 @@ PopDancer.prototype.step = function(){
 
     // call the old version of step at the beginning of any call to this new version of step
     //Dancer.prototoype.step();
-    console.log(this.$node);
     Dancer.prototype.step.call(this);
 
     /* toggle() is a jQuery method to show/hide the <span> tag.
